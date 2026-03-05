@@ -1,0 +1,372 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css" />
+
+
+  </head>
+
+  <body>
+
+
+<header>
+
+  <span>Sohail's Portfolio</span>
+
+  <div class="menu-btn">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="#Home">Home</a></li>
+      <li><a href="#Projects">Projects</a></li>
+      <li><a href="#Skills">Skills</a></li>
+      <li><a href="#Contacts">Contact</a></li>
+      <li><a href="#About">About</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<main>
+
+  <!-- hero section -->
+  <section class="first-sec" id="Home">
+    <div class="left">
+      <p>Hello, This is <span>Sohail Khan</span></p>
+      <p>and I'm a Passionate</p>
+      <span id="element"></span>
+      <div>
+      <a href="Sohail_Khan_Resume.pdf" target="_blank" class="resume-btn">
+View Resume
+</a>
+</div>
+    </div>
+
+    <!-- <div class="right">
+      <img src="https://img.freepik.com/premium-psd/3d-menu-ui-icon-isolated-transparent-background_495814-13359.jpg?semt=ais_hybrid&w=740&q=80" alt="" />
+    </div> -->
+  </section>
+
+  <hr />
+
+  <!-- Achievements -->
+  <section class="second-sec">
+    <p>My progress so far</p>
+    <h1>Achievements</h1>
+
+    <div class="box">
+
+      <div class="vertical">
+        <img src="https://media.licdn.com/dms/image/v2/C4E0BAQHlCQ6vdgJiiA/company-logo_200_200/company-logo_200_200/0/1630631127201/saneinfotech_logo?e=2147483647&v=beta&t=6AyIWpFknotDrbkeoNrIYVmRAY0PGGkm6dZoUJoIngk" class="top-img"/>
+
+        <p class="center">Aug 2025-Jan2026</p>
+
+        <p>
+          Completed a 6-month Web Development Internship at Sane Infotech,
+          building React components and backend features using Node.js and Express.
+        </p>
+      </div>
+
+      <div class="vertical">
+
+        <svg class="top-img BBC-img" width="60" height="60" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+
+          <rect x="2" y="4" width="20" height="14" rx="2"></rect>
+          <path d="M2 18h20"></path>
+          <polyline points="9 10 7 12 9 14"></polyline>
+          <polyline points="15 10 17 12 15 14"></polyline>
+
+        </svg>
+
+        <p>
+          Built and deployed multiple full-stack web applications using MERN
+          and Next.js, implementing authentication, REST APIs, database
+          integration, and responsive UI.
+        </p>
+
+      </div>
+
+      <div class="vertical">
+
+        <img src="Nielit.png" class="top-img"/>
+
+        <p class="center">2024-june</p>
+
+        <p>I have done an internship at NIELIT Guwahati in Cybersecurity</p>
+
+      </div>
+
+      <div class="vertical">
+
+        <img src="GCU.png" class="top-img"/>
+
+        <p class="center">2023-2026</p>
+
+        <p>
+          BCA Student — Girijananda Chowdhury University CGPA: 7.95 |
+          Focused on Web Development.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <hr />
+
+  <!-- Project section -->
+  <section class="projects" id="Projects">
+
+    <h2>Featured Projects</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+
+        <h3>URL Shortener</h3>
+
+        <p>Shorten long URLs with authentication and analytics.</p>
+
+        <div class="tech">Next.js | MongoDB | Express</div>
+
+        <div class="project-links">
+
+          <a href="https://url-shortener-app-topaz.vercel.app" target="_blank">🌐Link</a>
+
+          <a href="https://github.com/Developer-Sohail786/url-shortener-app" target="_blank">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Linktree Clone</h3>
+
+        <p>Create a personal page to manage and share links.</p>
+
+        <div class="tech">Next.js | MongoDB | Cloudinary</div>
+
+        <div class="project-links">
+
+          <a href="https://linktree-ruby-two.vercel.app" target="_blank">🌐Link</a>
+
+          <a href="https://github.com/Developer-Sohail786/linktree_" target="_blank">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Web Application Firewall (WAF) + JWT Authentication</h3>
+
+        <p>Detect and block SQL injection, XSS, and abuse using a custom WAF with JWT authentication.</p>
+
+        <div class="tech">React.js | Express.js | MongoDB</div>
+
+        <div class="project-links">
+
+          <a href="https://waf-jwt-frontend.vercel.app">🌐Link</a>
+
+          <a href="https://github.com/Developer-Sohail786/WAF-JWT">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <hr />
+
+  <!-- Skills -->
+  <h2 class="skills" id="Skills">Skills</h2>
+
+  <section class="fourth-sec">
+
+    <div class="sec-left">
+
+      <h2>Tech Stack</h2>
+
+      <div class="skill"><i class="devicon-html5-plain colored"></i><p>HTML5</p></div>
+      <div class="skill"><i class="devicon-css3-plain colored"></i><p>CSS3</p></div>
+      <div class="skill"><i class="devicon-tailwindcss-plain colored"></i><p>Tailwind CSS</p></div>
+      <div class="skill"><i class="devicon-javascript-plain colored"></i><p>JavaScript</p></div>
+      <div class="skill"><i class="devicon-react-original colored"></i><p>React</p></div>
+      <div class="skill"><i class="devicon-nextjs-plain"></i><p>Next.js</p></div>
+      <div class="skill"><i class="devicon-nodejs-plain colored"></i><p>Node.js</p></div>
+      <div class="skill"><i class="devicon-express-original"></i><p>Express.js</p></div>
+      <div class="skill"><i class="devicon-mongodb-plain colored"></i><p>MongoDB</p></div>
+
+    </div>
+
+    <div class="sec-right">
+
+      <h1>Tools</h1>
+
+      <div class="service"><i class="devicon-git-plain colored"></i><p>Git</p></div>
+      <div class="service"><i class="devicon-github-original"></i><p>GitHub</p></div>
+      <div class="service"><i class="devicon-docker-plain colored"></i><p>Docker</p></div>
+      <div class="service"><i class="fa-brands fa-aws"></i><p>AWS</p></div>
+      <div class="service"><i class="devicon-vscode-plain colored"></i><p>VS CODE</p></div>
+
+    </div>
+
+  </section>
+
+  <hr />
+
+  <!-- Contact -->
+  <section class="third-sec" id="Contacts">
+
+    <h1>Social Media</h1>
+
+    <p>Click on the icon to get to the profile</p>
+
+    <div class="social-items">
+
+      <div class="anchor">
+        <a href="https://www.linkedin.com/in/sohail-khan-8a5b36371/" target="_blank">
+          <img src="linkedin.png" class="social-img"/>
+        </a>
+        <p class="social-desc">Connect with me on LinkedIn</p>
+      </div>
+
+      <div class="anchor">
+        <a href="https://github.com/Developer-Sohail786" target="_blank">
+          <img src="github-logo.png" class="social-img"/>
+        </a>
+        <p class="social-desc">View my projects and source code</p>
+      </div>
+
+      <div class="anchor">
+        <a href="https://www.instagram.com/sohailkhan_n19" target="_blank">
+          <img src="instagram-logo.png" class="social-img"/>
+        </a>
+        <p class="social-desc">See what I'm up to beyond coding</p>
+      </div>
+
+      <div class="anchor">
+        <a href="https://wa.me/918918716256" target="_blank">
+          <img src="Whatsapp-logo.png" class="social-img"/>
+        </a>
+        <p class="social-desc">Message me directly on WhatsApp</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <hr />
+
+</main>
+
+<!-- footer -->
+<footer>
+
+  <h3>SOHAIL'S PORTFOLIO WEBSITE</h3>
+
+  <div class="footer" id="About">
+
+    <div>
+      <h3>About Me</h3>
+      <ul>
+        <li>MERN Stack Developer</li>
+        <li>Passionate about coding</li>
+        <li>Focused on responsive web apps</li>
+        <li>Always learning new tech</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Technologies</h3>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>React.js & Express.js</li>
+        <li>MongoDB & Node.js</li>
+        <li>Git & GitHub</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Services</h3>
+      <ul>
+        <li>Web Development</li>
+        <li>Responsive Design</li>
+        <li>Database Management</li>
+        <li>Deployment & Hosting</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li>Email: sanu30963@gmail.com</li>
+        <li>Phone: +91 9531023320</li>
+        <li><a href="https://github.com/Developer-Sohail786" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/sohail-khan-8a5b36371/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-text">
+    Copyright &#169; sohailportfolio.com | All rights reserved
+  </div>
+
+</footer>
+
+<!-- Typed JS -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<script>
+  var typed = new Typed("#element", {
+    strings:[
+      "Frontend Developer",
+      "MERN Stack Developer",
+      "React Developer",
+      "Full-Stack Developer"
+    ],
+    typeSpeed:55,
+  });
+
+  const menuBtn = document.querySelector(".menu-btn");
+  const navMenu = document.querySelector(".nav-menu");
+
+  menuBtn.addEventListener("click",()=>{
+    navMenu.classList.toggle("active");
+  });
+</script>
+
+
+  </body>
+</html>
