@@ -1,0 +1,17 @@
+1. Check Redis Uptash rate limiter once.
+
+2.Update the Resume 
+
+3.test it with Floto design(chrome extension) and with tester army
+
+4.Test the stop button on the chat bot
+
+5.Add view more projects
+
+6.Add Favicon and Title
+
+7. The AI reponse (base on the retrieve portfolio knowledge), work on it also add I can also give answer for sohail
+
+8.Integrate sooner for contact form submission
+
+9.Later on, not needed now, add the certificates of the internship so that they can see it.
