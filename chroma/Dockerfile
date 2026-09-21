@@ -1,4 +1,4 @@
-FROM chromadb/chroma:latest
+FROM chromadb/chroma:1.5.9
 
 EXPOSE 8000
 
