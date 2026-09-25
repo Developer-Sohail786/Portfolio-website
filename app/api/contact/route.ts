@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-// import ContactConfirmationEmail from "@/components/emails/contact-confirmation";
+import ContactConfirmationEmail from "@/components/email/contact-confirmation";
 import { contactRateLimit } from "@/lib/ratelimit";
 import { contactSchema } from "@/lib/validations/contact";
-import ContactConfirmationEmail from "@/components/email/contact-confirmation";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -20,9 +19,9 @@ function getClientIp(request: Request) {
 
 export async function POST(request: Request) {
   try {
-    /* --------------------------------
-       Environment validation
-    -------------------------------- */
+   
+      //  Environment validation
+   
 
     if (!process.env.RESEND_API_KEY) {
       console.error("RESEND_API_KEY is not configured.");
@@ -63,14 +62,13 @@ export async function POST(request: Request) {
       );
     }
 
-    /* --------------------------------
-       Rate limiting
-    -------------------------------- */
+
+      //  Rate limiting
+    
 
     const ip = getClientIp(request);
 
-    const { success, remaining, reset } =
-      await contactRateLimit.limit(ip);
+    const { success, reset } = await contactRateLimit.limit(ip);
 
     if (!success) {
       const retryAfter = Math.max(
@@ -93,9 +91,9 @@ export async function POST(request: Request) {
       );
     }
 
-    /* --------------------------------
-       Parse request
-    -------------------------------- */
+    
+      //  Parse request
+  
 
     let body: unknown;
 
@@ -111,9 +109,9 @@ export async function POST(request: Request) {
       );
     }
 
-    /* --------------------------------
-       Validate request
-    -------------------------------- */
+    
+      //  Validate request
+   
 
     const result = contactSchema.safeParse(body);
 
@@ -140,12 +138,12 @@ export async function POST(request: Request) {
 
     const { name, email, message } = result.data;
 
-    /* --------------------------------
-       Send notification to Sohail
-    -------------------------------- */
+  
+      //  Send notification to Sohail
+    
 
     const notification = await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>",
+      from: "Sohail <onboarding@resend.dev>",
       to: [process.env.CONTACT_EMAIL],
       replyTo: email,
       subject: `New portfolio message from ${name}`,
@@ -175,12 +173,12 @@ ${message}
       );
     }
 
-    /* --------------------------------
-       Send confirmation to sender
-    -------------------------------- */
+   
+      //  Send confirmation to sender
+  
 
     const confirmation = await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>",
+      from: "Sohail <onboarding@resend.dev>",
       to: [email],
       subject: "Thanks for reaching out",
       react: ContactConfirmationEmail({
@@ -189,11 +187,11 @@ ${message}
       }),
     });
 
-    /*
-      The message has already reached Sohail.
-      Therefore a confirmation failure shouldn't
-      make the entire submission look like a failure.
-    */
+    
+      // The message has already reached Sohail.
+      // Therefore a confirmation failure shouldn't
+      // make the entire submission look like a failure.
+    
 
     if (confirmation.error) {
       console.error(
@@ -202,17 +200,17 @@ ${message}
       );
     }
 
-    /* --------------------------------
-       Success
-    -------------------------------- */
+  
+      //  Success
+  
 
-  return NextResponse.json(
-  {
-    success: true,
-    message: "Message sent successfully.",
-  },
-  { status: 200 },
-);
+    return NextResponse.json(
+      {
+        success: true,
+        message: "Message sent successfully.",
+      },
+      { status: 200 },
+    );
   } catch (error) {
     console.error("Contact API error:", error);
 

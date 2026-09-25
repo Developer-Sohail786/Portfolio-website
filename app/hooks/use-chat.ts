@@ -148,13 +148,13 @@ export function useChat() {
     }
   };
 
-  /**
-   * Stops the currently running AI response.
-   *
-   * - Cancels the network request.
-   * - Stops the visual renderer.
-   * - Keeps any response text already displayed.
-   */
+
+//     Stops the currently running AI response.
+   
+//  Cancels the network request.
+//     Stops the visual renderer.
+//     Keeps any response text already displayed.
+  
   const stopStreaming = () => {
     if (!isLoading) {
       return;
@@ -268,10 +268,10 @@ export function useChat() {
         streamBufferRef.current += finalChunk;
       }
 
-      /*
-       * Wait for the smooth renderer to catch up with
-       * everything received from the server.
-       */
+    
+      //   Wait for the smooth renderer to catch up with
+      //   everything received from the server.
+      
       while (
         displayedStreamRef.current.length < streamBufferRef.current.length
       ) {
@@ -280,10 +280,10 @@ export function useChat() {
 
       finishSmoothRenderer();
     } catch (error) {
-      /*
-       * AbortController cancellation is intentional.
-       * Don't show an error message when the user clicks Stop.
-       */
+      
+      // AbortController cancellation is intentional.
+      // Don't show an error message when the user clicks Stop.
+       
       if (error instanceof DOMException && error.name === "AbortError") {
         return;
       }

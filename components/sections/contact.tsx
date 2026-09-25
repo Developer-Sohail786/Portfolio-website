@@ -2,14 +2,15 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send } from "lucide-react";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
-import { contactSchema, type ContactFormData } from "@/lib/validations/contact";
+import {
+  contactSchema,
+  type ContactFormData,
+} from "@/lib/validations/contact";
 
 export function Contact() {
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-
   const {
     register,
     handleSubmit,
@@ -21,8 +22,6 @@ export function Contact() {
   });
 
   async function onSubmit(data: ContactFormData) {
-    setStatus("idle");
-
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -35,13 +34,23 @@ export function Contact() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result?.message || "Failed to send message.");
+        throw new Error(
+          result?.message || "Failed to send message.",
+        );
       }
 
-      setStatus("success");
       reset();
-    } catch {
-      setStatus("error");
+
+      toast.success("Message sent successfully.", {
+        description:
+          "Thanks for reaching out. I'll get back to you soon.",
+      });
+    } catch (error) {
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
     }
   }
 
@@ -199,21 +208,6 @@ export function Contact() {
                     className="transition-transform group-hover:translate-x-1"
                   />
                 </button>
-              </div>
-
-              {/* Status */}
-              <div className="mt-4 min-h-5 text-center">
-                {status === "success" && (
-                  <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-green-300">
-                    Message sent successfully.
-                  </p>
-                )}
-
-                {status === "error" && (
-                  <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-red-300">
-                    Something went wrong. Please try again.
-                  </p>
-                )}
               </div>
             </form>
           </div>

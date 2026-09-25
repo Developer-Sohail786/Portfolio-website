@@ -46,9 +46,8 @@ export default function ContactConfirmationEmail({
               backgroundSize: "50px 50px",
             }}
           >
-            {/* --------------------------------
-                Header metadata
-            -------------------------------- */}
+            {/*
+                Header metadata*/}
             <Section className="px-7 py-6 sm:px-10">
               <table width="100%" cellPadding="0" cellSpacing="0">
                 <tbody>
@@ -77,9 +76,7 @@ export default function ContactConfirmationEmail({
               </table>
             </Section>
 
-            {/* --------------------------------
-                Main header
-            -------------------------------- */}
+            {/*  Main header*/}
             <Section className="border-y border-white/20 px-7 py-12 text-center sm:px-10 sm:py-14">
               <Text className="m-0 text-[10px] uppercase tracking-[0.3em] text-blue-200">
                 — MESSAGE RECEIVED —
@@ -127,9 +124,7 @@ export default function ContactConfirmationEmail({
               </Section>
             </Section>
 
-            {/* --------------------------------
-                Message content
-            -------------------------------- */}
+            {/* Message content */}
             <Section className="px-7 py-10 sm:px-12 sm:py-12">
               {/* Greeting */}
               <Text className="m-0 text-[18px] text-blue-100">
@@ -150,9 +145,7 @@ export default function ContactConfirmationEmail({
                 I appreciate you taking the time to connect.
               </Text>
 
-              {/* --------------------------------
-                  Sender's message
-              -------------------------------- */}
+              {/* Sender's message*/}
               <Section className="mt-8 border border-white/50 bg-white/[0.04]">
                 {/* Message header */}
                 <Section className="border-b border-white/25 px-5 py-3">
@@ -190,9 +183,7 @@ export default function ContactConfirmationEmail({
               </Section>
             </Section>
 
-            {/* --------------------------------
-                Footer
-            -------------------------------- */}
+            {/*Footer*/}
             <Section className="border-t border-white/25">
               <table width="100%" cellPadding="0" cellSpacing="0">
                 <tbody>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
+import {Toaster} from "sonner"
 
 import "./globals.css";
 
@@ -78,6 +79,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={ibmPlexMono.variable}>
         {children}
+
+        <Toaster
+        position="bottom-right"
+        richColors
+        closeButton/>
+
 
         <script
           type="application/ld+json"
